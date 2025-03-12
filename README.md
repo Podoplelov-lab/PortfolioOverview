@@ -1,54 +1,27 @@
-# React + TypeScript + Vite
+# Тестовое задание для Frontend Developer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Создайте модуль "PortfolioOverview" с функциями управления портфелем и обновлениями данных в реальном времени. Среди сторонних библиотек можно socket.io, sass, axios, uuid, react-redux, @reduxjs/toolkit, classnames, любая библиотека для графиков, любая библиотека для анимаций
 
-Currently, two official plugins are available:
+## Требования
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Используйте React, TypeScript и Redux Toolkit, SCSS.  
 
-## Expanding the ESLint configuration
+Проект можно развернуть через Next.js, create-react-app, Vite.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Реализуйте отображение списка активов с полями: название, количество, текущая цена, общая стоимость, изменение за 24 часа (в процентах), доля в портфеле (в процентах от общей стоимости).  
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Интегрируйте WebSocket (wss://stream.binance.com:9443/stream?streams) для real-time обновления цен Bitcoin и других активов.  
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Реализуйте форму для добавления активов.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Реализуйте удаление на клик по активу.  
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Виртуализация списка для поддержки более 100 активов. 
+
+Локальное сохранение активов после добавления.
+
+## Для запуска проекта
+
+```bash
+npm install
+npm run dev
