@@ -1,0 +1,17 @@
+.assetForm {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  
+    input {
+      margin-right: 10px;
+    }
+  
+    button {
+      background-color: #28a745;
+  
+      &:hover {
+        background-color: #218838;
+      }
+    }
+  }
